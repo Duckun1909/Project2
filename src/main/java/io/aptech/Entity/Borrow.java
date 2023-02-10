@@ -13,7 +13,8 @@ public class Borrow {
     public Borrow() {
     }
 
-    public Borrow(Reader reader, LocalDateTime borrow_date, LocalDateTime return_date, String return_status) {
+    public Borrow(int borrow_id,Reader reader, LocalDateTime borrow_date, LocalDateTime return_date, String return_status) {
+        this.borrow_id = borrow_id;
         this.reader = reader;
         this.borrow_date = borrow_date;
         this.return_date = return_date;

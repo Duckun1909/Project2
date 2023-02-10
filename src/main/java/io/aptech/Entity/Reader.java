@@ -10,7 +10,8 @@ public class Reader {
     public Reader() {
     }
 
-    public Reader(String reader_name, String reader_phone, String reader_address, String reader_cid) {
+    public Reader(int reader_id,String reader_name, String reader_phone, String reader_address, String reader_cid) {
+        this.reader_id = reader_id;
         this.reader_name = reader_name;
         this.reader_phone = reader_phone;
         this.reader_address = reader_address;

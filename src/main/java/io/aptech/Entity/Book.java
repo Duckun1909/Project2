@@ -14,7 +14,8 @@ public class Book {
     public Book() {
     }
 
-    public Book(String book_name, float book_price, String book_description, String book_image, int book_quantity, Category category, Author author, Publisher publisher) {
+    public Book(int book_id,String book_name, float book_price, String book_description, String book_image, int book_quantity, Category category, Author author, Publisher publisher) {
+        this.book_id = book_id;
         this.book_name = book_name;
         this.book_price = book_price;
         this.book_description = book_description;
