@@ -2,19 +2,15 @@ package io.aptech.Controller;
 
 import io.aptech.Execute.FxmlLoader;
 import javafx.animation.FillTransition;
-import javafx.collections.ObservableList;
-import javafx.css.Style;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 
 import java.net.URL;
-import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class MenuController implements Initializable {
@@ -93,7 +89,7 @@ public class MenuController implements Initializable {
         btnStudentInfo.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                viewPane = FxmlLoader.getViewPane("/Views/StudentInfo.fxml");
+                viewPane = FxmlLoader.getViewPane("/Views/ReaderInfo.fxml");
                 mainBorderPane.setCenter(viewPane);
                 btnStudentInfo.setStyle("-fx-background-color: #fb8c00");
                 btnBookInfo.setStyle("-fx-background-color: #fff");
