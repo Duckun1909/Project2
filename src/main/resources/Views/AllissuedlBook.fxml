@@ -72,10 +72,13 @@
                                         </ContextMenu>
                                     </contextMenu>
                                 </TableView>
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="126.0" text="Return">
+                        <Button defaultButton="true" mnemonicParsing="false" prefHeight="30.0" prefWidth="126.0" text="Return" textFill="#d75b5b">
                            <VBox.margin>
                               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                            </VBox.margin>
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
                         </Button>
                             </children>
                         </VBox>

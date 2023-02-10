@@ -24,21 +24,23 @@ public class MenuController implements Initializable {
     private AnchorPane anchorPane;
     @FXML
     private Button btnDashboard;
-
     @FXML
-    private ImageView imgDashboard;
+    private Button btnAuthor;
+    @FXML
+    private Button btnPulisher;
+    @FXML
+    private Button btnCategory;
+
 
     @FXML
     private Button btnIsuueReturnBook;
 
-    @FXML
-    private ImageView imgIsuueReturnBook;
+
 
     @FXML
     private Button btnStudentInfo;
 
-    @FXML
-    private ImageView imgStudentInfo;
+
 
     @FXML
     private Button btnBookInfo;
@@ -47,23 +49,11 @@ public class MenuController implements Initializable {
     @FXML
     private BorderPane mainBorderPane;
 
-    @FXML
-    private ImageView imgBookInfo;
 
-    @FXML
-    private Button btnSetting;
 
-    @FXML
-    private ImageView imgSetting;
 
-    @FXML
-    private Button btnAbout;
 
-    @FXML
-    private ImageView imgAbout;
 
-    @FXML
-    private AnchorPane centerPane;
 
     @FXML
     private Button btnIssuedBook;
@@ -99,6 +89,9 @@ public class MenuController implements Initializable {
                 btnBookInfo.setStyle("-fx-background-color: #fff");
                 btnIsuueReturnBook.setStyle("-fx-background-color: #fff");
                 btnIssuedBook.setStyle("-fx-background-color: #fff");
+                btnAuthor.setStyle("-fx-background-color: #fff");
+                btnPulisher.setStyle("-fx-background-color: #fff");
+                btnCategory.setStyle("-fx-background-color: #fff");
             }
         });
         btnIsuueReturnBook.setOnAction(new EventHandler<ActionEvent>() {
@@ -110,6 +103,9 @@ public class MenuController implements Initializable {
                 btnBookInfo.setStyle("-fx-background-color: #fff");
                 btnStudentInfo.setStyle("-fx-background-color: #fff");
                 btnIssuedBook.setStyle("-fx-background-color: #fff");
+                btnAuthor.setStyle("-fx-background-color: #fff");
+                btnPulisher.setStyle("-fx-background-color: #fff");
+                btnCategory.setStyle("-fx-background-color: #fff");
             }
         });
 
@@ -122,6 +118,51 @@ public class MenuController implements Initializable {
                 btnBookInfo.setStyle("-fx-background-color: #fff");
                 btnStudentInfo.setStyle("-fx-background-color: #fff");
                 btnIsuueReturnBook.setStyle("-fx-background-color: #fff");
+                btnAuthor.setStyle("-fx-background-color: #fff");
+                btnPulisher.setStyle("-fx-background-color: #fff");
+                btnCategory.setStyle("-fx-background-color: #fff");
+            }
+        });
+        btnAuthor.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                viewPane = FxmlLoader.getViewPane("/Views/Author.fxml");
+                mainBorderPane.setCenter(viewPane);
+                btnIssuedBook.setStyle("-fx-background-color: #fff");
+                btnBookInfo.setStyle("-fx-background-color: #fff");
+                btnStudentInfo.setStyle("-fx-background-color: #fff");
+                btnIsuueReturnBook.setStyle("-fx-background-color: #fff");
+                btnAuthor.setStyle("-fx-background-color: #fb8c00");
+                btnPulisher.setStyle("-fx-background-color: #fff");
+                btnCategory.setStyle("-fx-background-color: #fff");
+            }
+        });
+        btnPulisher.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                viewPane = FxmlLoader.getViewPane("/Views/Pulisher.fxml");
+                mainBorderPane.setCenter(viewPane);
+                btnIssuedBook.setStyle("-fx-background-color: #fff");
+                btnBookInfo.setStyle("-fx-background-color: #fff");
+                btnStudentInfo.setStyle("-fx-background-color: #fff");
+                btnIsuueReturnBook.setStyle("-fx-background-color: #fff");
+                btnAuthor.setStyle("-fx-background-color: #fff");
+                btnPulisher.setStyle("-fx-background-color: #fb8c00");
+                btnCategory.setStyle("-fx-background-color: #fff");
+            }
+        });
+        btnCategory.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                viewPane = FxmlLoader.getViewPane("/Views/Category.fxml");
+                mainBorderPane.setCenter(viewPane);
+                btnIssuedBook.setStyle("-fx-background-color: #fff");
+                btnBookInfo.setStyle("-fx-background-color: #fff");
+                btnStudentInfo.setStyle("-fx-background-color: #fff");
+                btnIsuueReturnBook.setStyle("-fx-background-color: #fff");
+                btnAuthor.setStyle("-fx-background-color: #fff");
+                btnPulisher.setStyle("-fx-background-color: #fff");
+                btnCategory.setStyle("-fx-background-color: #fb8c00");
             }
         });
     }

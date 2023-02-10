@@ -7,7 +7,9 @@
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -15,6 +17,7 @@
 <?import javafx.scene.effect.SepiaTone?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -23,7 +26,7 @@
         <URL value="@Css/Style.css" />
     </stylesheets>
     <children>
-        <BorderPane layoutY="6.0" prefHeight="701.0" prefWidth="933.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <BorderPane layoutY="6.0" prefHeight="701.0" prefWidth="933.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
             <top>
                 <AnchorPane prefHeight="76.0" prefWidth="921.0" BorderPane.alignment="CENTER">
                     <children>
@@ -41,25 +44,36 @@
                 </AnchorPane>
             </top>
          <center>
-                <AnchorPane prefHeight="576.0" prefWidth="875.0" styleClass="flatAnchorWithEffect1" BorderPane.alignment="CENTER">
+                <AnchorPane prefHeight="612.0" prefWidth="924.0" styleClass="flatAnchorWithEffect1" BorderPane.alignment="CENTER">
                     <children>
-                  <Button layoutX="554.0" layoutY="535.0" mnemonicParsing="false" style="-fx-background-color: green;" text="Comfirm" textAlignment="CENTER" textFill="#a42424" />
-                  <SplitPane layoutX="554.0" layoutY="28.0" prefHeight="479.0" prefWidth="305.0" AnchorPane.leftAnchor="554.0" AnchorPane.rightAnchor="22.0">
+                  <Button layoutX="561.0" layoutY="535.0" mnemonicParsing="false" style="-fx-background-color: green;" text="Comfirm" textAlignment="CENTER" textFill="#a42424" />
+                  <SplitPane layoutX="561.0" layoutY="27.0" prefHeight="480.0" prefWidth="311.0" AnchorPane.leftAnchor="561.0" AnchorPane.rightAnchor="22.0">
                      <items>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="468.0" prefWidth="303.0">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="484.0" prefWidth="310.0">
                            <children>
                               <TextField layoutX="23.0" layoutY="31.0" prefHeight="34.0" prefWidth="278.0" />
                               <Button layoutX="320.0" layoutY="34.0" mnemonicParsing="false" style="-fx-background-color: red;" text="Tìm kiếm" />
-                              <TableView blendMode="SRC_ATOP" fixedCellSize="1.0" layoutX="-2.0" layoutY="83.0" prefHeight="396.0" prefWidth="304.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="1.0">
-                                 <columns>
-                                    <TableColumn fx:id="bookID" prefWidth="75.0" style="fx-border-style: solid;" text="ID" />
-                                    <TableColumn fx:id="bookName" prefWidth="143.99993896484375" text="Name" />
-                                    <TableColumn fx:id="bookQuantity" minWidth="1.59991455078125" prefWidth="800.0" text="Quantity" />
-                                 </columns>
-                                 <effect>
-                                    <SepiaTone level="0.5" />
-                                 </effect>
-                              </TableView>
+                              <VBox layoutY="91.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0">
+                                 <children>
+                                    <TableView blendMode="SRC_ATOP" fixedCellSize="1.0" prefHeight="388.0" prefWidth="309.0">
+                                       <columns>
+                                          <TableColumn fx:id="bookID" prefWidth="75.0" style="fx-border-style: solid;" text="ID" />
+                                          <TableColumn fx:id="bookName" prefWidth="143.99993896484375" text="Name" />
+                                          <TableColumn fx:id="bookQuantity" minWidth="1.59991455078125" prefWidth="101.0" text="Quantity" />
+                                       </columns>
+                                       <effect>
+                                          <SepiaTone level="0.5" />
+                                       </effect>
+                                       <contextMenu>
+                                          <ContextMenu>
+                                            <items>
+                                              <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                                            </items>
+                                          </ContextMenu>
+                                       </contextMenu>
+                                    </TableView>
+                                 </children>
+                              </VBox>
                               <Text layoutX="134.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book List">
                                  <font>
                                     <Font name="Arial" size="18.0" />
@@ -69,23 +83,34 @@
                         </AnchorPane>
                      </items>
                   </SplitPane>
-                  <SplitPane layoutX="21.0" layoutY="27.0" prefHeight="480.0" prefWidth="490.0" AnchorPane.leftAnchor="21.0">
+                  <SplitPane layoutX="21.0" layoutY="27.0" prefHeight="480.0" prefWidth="499.0" AnchorPane.leftAnchor="21.0">
                      <items>
                         <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="444.0" prefWidth="488.0">
                            <children>
                               <TextField layoutX="22.0" layoutY="28.0" prefHeight="34.0" prefWidth="278.0" />
                               <Button layoutX="315.0" layoutY="30.0" mnemonicParsing="false" style="-fx-background-color: red;" text="Tìm kiếm" wrapText="true" />
-                              <TableView layoutX="1.0" layoutY="89.0" prefHeight="391.0" prefWidth="487.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0">
-                                 <columns>
-                                    <TableColumn fx:id="readerID" text="ID " />
-                                    <TableColumn fx:id="readerPhone" prefWidth="146.3999786376953" text="Phone" />
-                                    <TableColumn fx:id="readerName" minWidth="0.0" prefWidth="144.80003356933594" text="Name" />
-                                    <TableColumn fx:id="readerName1" minWidth="0.0" prefWidth="144.80003356933594" text="Adress" />
-                                 </columns>
-                                 <effect>
-                                    <SepiaTone level="0.5" />
-                                 </effect>
-                              </TableView>
+                              <VBox layoutY="91.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0">
+                                 <children>
+                                    <TableView prefHeight="389.0" prefWidth="497.0">
+                                       <columns>
+                                          <TableColumn fx:id="readerID" text="ID " />
+                                          <TableColumn fx:id="readerPhone" prefWidth="116.80001831054688" text="Phone" />
+                                          <TableColumn fx:id="readerName" minWidth="0.0" prefWidth="129.59999084472656" text="Name" />
+                                          <TableColumn fx:id="readerName1" minWidth="0.0" prefWidth="168.79998779296875" text="Adress" />
+                                       </columns>
+                                       <effect>
+                                          <SepiaTone level="0.5" />
+                                       </effect>
+                                       <contextMenu>
+                                          <ContextMenu>
+                                            <items>
+                                              <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                                            </items>
+                                          </ContextMenu>
+                                       </contextMenu>
+                                    </TableView>
+                                 </children>
+                              </VBox>
                               <Text layoutX="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reader List" textAlignment="CENTER" wrappingWidth="106.93678283691406" y="20.0">
                                  <font>
                                     <Font name="Arial" size="18.0" />
@@ -95,8 +120,8 @@
                         </AnchorPane>
                      </items>
                   </SplitPane>
-                  <TextField layoutX="372.0" layoutY="537.0" prefHeight="26.0" prefWidth="158.0" />
-                  <Label layoutX="288.0" layoutY="540.0" text="Return Date:">
+                  <TextField layoutX="361.0" layoutY="536.0" prefHeight="26.0" prefWidth="158.0" />
+                  <Label layoutX="271.0" layoutY="540.0" text="Return Date:">
                      <font>
                         <Font size="14.0" />
                      </font>
