@@ -16,6 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<AnchorPane prefHeight="654.0" prefWidth="1009.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
 <AnchorPane prefHeight="654.0" prefWidth="1009.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" >
     <stylesheets>
         <URL value="@Css/Style.css" />
@@ -52,7 +53,11 @@
                     <children>
                         <VBox layoutX="14.0" layoutY="14.0" prefHeight="374.0" prefWidth="297.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0">
                             <children>
+
+                                <TextField fx:id="txtAuthorID" disable="true" editable="false" prefHeight="26.0" prefWidth="244.0" promptText="Author ID">
+
                                 <TextField fx:id="txtSID" disable="true" editable="false" prefHeight="26.0" prefWidth="244.0" promptText="Author ID">
+
                                     <font>
                                         <Font size="15.0" />
                                     </font>
@@ -60,7 +65,11 @@
                                         <Insets bottom="6.0" left="6.0" right="6.0" top="26.0" />
                                     </VBox.margin>
                                 </TextField>
+
+                                <TextField fx:id="txtAuthorName" layoutX="16.0" layoutY="16.0" prefHeight="26.0" prefWidth="244.0" promptText="Author's Name">
+
                                 <TextField fx:id="txtStudentName" layoutX="16.0" layoutY="16.0" prefHeight="26.0" prefWidth="244.0" promptText="Author's Name">
+
                                     <font>
                                         <Font size="15.0" />
                                     </font>
@@ -68,7 +77,11 @@
                                         <Insets bottom="6.0" left="6.0" right="6.0" top="26.0" />
                                     </VBox.margin>
                                 </TextField>
+
+                                <TextArea fx:id="txtAuthorDescription" prefHeight="96.0" prefWidth="285.0" promptText="Author Description">
+
                                 <TextArea fx:id="txtAddress" prefHeight="96.0" prefWidth="285.0" promptText="Author Description">
+
                                     <VBox.margin>
                                         <Insets bottom="6.0" left="6.0" right="6.0" top="26.0" />
                                     </VBox.margin>

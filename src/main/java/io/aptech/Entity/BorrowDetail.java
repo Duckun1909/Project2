@@ -9,7 +9,8 @@ public class BorrowDetail {
     public BorrowDetail() {
     }
 
-    public BorrowDetail(Borrow borrow, Book book, float payment) {
+    public BorrowDetail(int borrowDetail_id,Borrow borrow, Book book, float payment) {
+        this.borrowDetail_id = borrowDetail_id;
         this.borrow = borrow;
         this.book = book;
         this.payment = payment;
