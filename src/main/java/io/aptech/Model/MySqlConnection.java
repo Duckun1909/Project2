@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class MySqlConnection {
     private static final String host ="jdbc:mysql://localhost:3306/librarymanagement";
     private static final String username ="root";
-    private static final String password ="Duc1909az";
+    private static final String password ="Dangtay192003";
     private static Connection connection;
     public static Connection getConnection() {
 

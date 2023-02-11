@@ -16,9 +16,9 @@ import java.util.ResourceBundle;
 
 public class ReaderInforController implements Initializable {
     @FXML private TextField txtSearch;
-    
-    @FXML private Button btnSearch; 
-    @FXML private Button btnRefresh; 
+
+    @FXML private Button btnSearch;
+    @FXML private Button btnRefresh;
 
     @FXML private TextField txtReaderID;
     @FXML private TextField txtReaderName;
@@ -48,24 +48,24 @@ public class ReaderInforController implements Initializable {
     @FXML
     TableColumn<Reader, String> issueBookCol;
 
-    public static void setValueToTable(){
-        ObservableList<Reader> readers = ReaderInfoStatement.getSatement().getAll();
-        idCol.setCellValueFactory(new PropertyValueFactory<Reader, String>("reader_id"));
-        readerNameCol.setCellValueFactory(new PropertyValueFactory<Reader, String>("reader_name"));
-        readerPhoneCol.setCellValueFactory(new PropertyValueFactory<Reader, String>("reader_phone"));
-        readerAddressCol.setCellValueFactory(new PropertyValueFactory<Reader, String>("reader_address"));
-        readerCidCol.setCellValueFactory(new PropertyValueFactory<Reader, String>("reader_cid"));
-        readerTable.setItems(readers);
-    }
+//    public static void setValueToTable(){
+//        ObservableList<Reader> readers = ReaderInfoStatement.getSatement().getAll();
+//        idCol.setCellValueFactory(new PropertyValueFactory<Reader, String>("reader_id"));
+//        readerNameCol.setCellValueFactory(new PropertyValueFactory<Reader, String>("reader_name"));
+//        readerPhoneCol.setCellValueFactory(new PropertyValueFactory<Reader, String>("reader_phone"));
+//        readerAddressCol.setCellValueFactory(new PropertyValueFactory<Reader, String>("reader_address"));
+//        readerCidCol.setCellValueFactory(new PropertyValueFactory<Reader, String>("reader_cid"));
+//        readerTable.setItems(readers);
+//    }
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        setValueToTable();
-        btnAdd.setOnMouseClicked(e->{
-            Reader reader = new Reader(0, txtReaderName.getText(), txtReaderPhone.getText(), txtReaderAddress.getText(), txtReaderCID.getText());
-            ReaderInfoStatement.getSatement().insert(reader);
-            setValueToTable();
-        });
+//        setValueToTable();
+//        btnAdd.setOnMouseClicked(e->{
+//            Reader reader = new Reader(0, txtReaderName.getText(), txtReaderPhone.getText(), txtReaderAddress.getText(), txtReaderCID.getText());
+//            ReaderInfoStatement.getSatement().insert(reader);
+//            setValueToTable();
+//        });
     }
 }

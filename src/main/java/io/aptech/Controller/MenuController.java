@@ -73,6 +73,9 @@ public class MenuController implements Initializable {
                 btnStudentInfo.setStyle("-fx-background-color: #fff");
                 btnIsuueReturnBook.setStyle("-fx-background-color: #fff");
                 btnIssuedBook.setStyle("-fx-background-color: #fff");
+                btnAuthor.setStyle("-fx-background-color: #fff");
+                btnPulisher.setStyle("-fx-background-color: #fff");
+                btnCategory.setStyle("-fx-background-color: #fff");
             }
         });
 
