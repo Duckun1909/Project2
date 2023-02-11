@@ -51,7 +51,11 @@
                <children>
                   <VBox layoutX="14.0" layoutY="14.0" prefHeight="374.0" prefWidth="297.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0">
                      <children>
+<<<<<<< HEAD:src/main/resources/Views/StudentInfo.fxml
+                        <TextField fx:id="txtSID" disable="true" editable="false" prefHeight="26.0" prefWidth="244.0" promptText="Reader ID">
+=======
                         <TextField fx:id="txtReaderID" disable="true" editable="false" prefHeight="26.0" prefWidth="244.0" promptText="Reader's ID">
+>>>>>>> 5ea554016931155c10a8cc5e5b803090d9cd1ad8:src/main/resources/Views/ReaderInfo.fxml
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -59,7 +63,11 @@
                               <Insets bottom="6.0" left="6.0" right="6.0" top="26.0" />
                            </VBox.margin>
                         </TextField>
+<<<<<<< HEAD:src/main/resources/Views/StudentInfo.fxml
+                        <TextField fx:id="txtStudentName" layoutX="16.0" layoutY="16.0" prefHeight="26.0" prefWidth="244.0" promptText="Reader's Name">
+=======
                         <TextField fx:id="txtReaderName" layoutX="16.0" layoutY="16.0" prefHeight="26.0" prefWidth="244.0" promptText="Reader's Name">
+>>>>>>> 5ea554016931155c10a8cc5e5b803090d9cd1ad8:src/main/resources/Views/ReaderInfo.fxml
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -67,7 +75,11 @@
                               <Insets bottom="6.0" left="6.0" right="6.0" top="26.0" />
                            </VBox.margin>
                         </TextField>
+<<<<<<< HEAD:src/main/resources/Views/StudentInfo.fxml
+                        <TextField fx:id="txtRoll" layoutX="16.0" layoutY="79.0" prefHeight="26.0" prefWidth="244.0" promptText="Roll No.">
+=======
                         <TextField fx:id="txtReaderPhone" layoutX="16.0" layoutY="79.0" prefHeight="26.0" prefWidth="244.0" promptText="Reader's Phone">
+>>>>>>> 5ea554016931155c10a8cc5e5b803090d9cd1ad8:src/main/resources/Views/ReaderInfo.fxml
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -119,11 +131,20 @@
                      <children>
                         <TableView fx:id="readerTable" prefHeight="452.0" prefWidth="379.0" VBox.vgrow="ALWAYS">
                           <columns>
+<<<<<<< HEAD:src/main/resources/Views/StudentInfo.fxml
+                            <TableColumn fx:id="idCol" prefWidth="75.0" text="Reader ID" />
+                            <TableColumn fx:id="studentNameCol" prefWidth="75.0" text="Reader's Name" />
+                              <TableColumn fx:id="classCol" prefWidth="75.0" text="Class" />
+                              <TableColumn fx:id="rollCol" prefWidth="75.0" text="Roll No." />
+                              <TableColumn fx:id="mobileCol" prefWidth="75.0" text="Mobile No." />
+                              <TableColumn fx:id="addressCol" prefWidth="75.0" text="Address" />
+=======
                             <TableColumn fx:id="idCol" prefWidth="75.0" text="Reader's ID" />
                             <TableColumn fx:id="readerNameCol" prefWidth="75.0" text="Reader's Name" />
                               <TableColumn fx:id="readerPhoneCol" prefWidth="75.0" text="Reader's Phone" />
                               <TableColumn fx:id="readerAddressCol" prefWidth="75.0" text="Reader's CID" />
                               <TableColumn fx:id="readerCidCol" prefWidth="75.0" text="Address" />
+>>>>>>> 5ea554016931155c10a8cc5e5b803090d9cd1ad8:src/main/resources/Views/ReaderInfo.fxml
                               <TableColumn fx:id="issueBookCol" prefWidth="75.0" text="No. of Issue Books" />
                           </columns>
                            <columnResizePolicy>
