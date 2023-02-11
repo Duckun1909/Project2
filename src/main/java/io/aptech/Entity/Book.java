@@ -6,7 +6,7 @@ public class Book {
     private float book_price;
     private String book_description;
     private String book_image;
-    private int book_quantity;
+    private String book_status;
     private Category category;
     private Author author;
     private Publisher publisher;
@@ -14,17 +14,28 @@ public class Book {
     public Book() {
     }
 
-    public Book(int book_id,String book_name, float book_price, String book_description, String book_image, int book_quantity, Category category, Author author, Publisher publisher) {
+    public Book(int book_id, String book_name, float book_price, String book_image, String book_status, String book_description) {
         this.book_id = book_id;
         this.book_name = book_name;
         this.book_price = book_price;
         this.book_description = book_description;
         this.book_image = book_image;
-        this.book_quantity = book_quantity;
+        this.book_status = book_status;
+    }
+
+    public Book(int book_id, String book_name, Author author, Publisher publisher, float book_price, String book_image , String book_quantity, String book_description, Category category) {
+        this.book_id = book_id;
+        this.book_name = book_name;
+        this.book_price = book_price;
+        this.book_description = book_description;
+        this.book_image = book_image;
+        this.book_status = book_quantity;
         this.category = category;
         this.author = author;
         this.publisher = publisher;
     }
+
+
 
     public int getBook_id() {
         return book_id;
@@ -66,12 +77,12 @@ public class Book {
         this.book_image = book_image;
     }
 
-    public int getBook_quantity() {
-        return book_quantity;
+    public String getBook_quantity() {
+        return book_status;
     }
 
-    public void setBook_quantity(int book_quantity) {
-        this.book_quantity = book_quantity;
+    public void setBook_quantity(String book_quantity) {
+        this.book_status = book_quantity;
     }
 
     public Category getCategory() {
