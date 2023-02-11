@@ -3,13 +3,11 @@
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -17,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="654.0" prefWidth="1009.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.aptech.Controller.StudentInforController">
+<AnchorPane prefHeight="654.0" prefWidth="1009.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.aptech.Controller.ReaderInforController">
    <stylesheets>
       <URL value="@Css/Style.css" />
    </stylesheets>
@@ -28,7 +26,7 @@
                <children>
                   <AnchorPane styleClass="flatAnchorWithEffect1" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="3.0">
                      <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="56.0" prefWidth="664.0" text="Student Info" textFill="WHITE" underline="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="56.0" prefWidth="664.0" text="Reader Info" textFill="WHITE" underline="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                            <font>
                               <Font name="Elephant" size="33.0" />
                            </font>
@@ -53,7 +51,11 @@
                <children>
                   <VBox layoutX="14.0" layoutY="14.0" prefHeight="374.0" prefWidth="297.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0">
                      <children>
-                        <TextField fx:id="txtSID" disable="true" editable="false" prefHeight="26.0" prefWidth="244.0" promptText="Student ID">
+<<<<<<< HEAD:src/main/resources/Views/StudentInfo.fxml
+                        <TextField fx:id="txtSID" disable="true" editable="false" prefHeight="26.0" prefWidth="244.0" promptText="Reader ID">
+=======
+                        <TextField fx:id="txtReaderID" disable="true" editable="false" prefHeight="26.0" prefWidth="244.0" promptText="Reader's ID">
+>>>>>>> 5ea554016931155c10a8cc5e5b803090d9cd1ad8:src/main/resources/Views/ReaderInfo.fxml
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -61,7 +63,11 @@
                               <Insets bottom="6.0" left="6.0" right="6.0" top="26.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField fx:id="txtStudentName" layoutX="16.0" layoutY="16.0" prefHeight="26.0" prefWidth="244.0" promptText="Student's Name">
+<<<<<<< HEAD:src/main/resources/Views/StudentInfo.fxml
+                        <TextField fx:id="txtStudentName" layoutX="16.0" layoutY="16.0" prefHeight="26.0" prefWidth="244.0" promptText="Reader's Name">
+=======
+                        <TextField fx:id="txtReaderName" layoutX="16.0" layoutY="16.0" prefHeight="26.0" prefWidth="244.0" promptText="Reader's Name">
+>>>>>>> 5ea554016931155c10a8cc5e5b803090d9cd1ad8:src/main/resources/Views/ReaderInfo.fxml
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -69,12 +75,11 @@
                               <Insets bottom="6.0" left="6.0" right="6.0" top="26.0" />
                            </VBox.margin>
                         </TextField>
-                        <ComboBox fx:id="txtClass" prefHeight="41.0" prefWidth="292.0" promptText="Class">
-                           <VBox.margin>
-                              <Insets bottom="6.0" left="6.0" right="6.0" top="26.0" />
-                           </VBox.margin>
-                        </ComboBox>
+<<<<<<< HEAD:src/main/resources/Views/StudentInfo.fxml
                         <TextField fx:id="txtRoll" layoutX="16.0" layoutY="79.0" prefHeight="26.0" prefWidth="244.0" promptText="Roll No.">
+=======
+                        <TextField fx:id="txtReaderPhone" layoutX="16.0" layoutY="79.0" prefHeight="26.0" prefWidth="244.0" promptText="Reader's Phone">
+>>>>>>> 5ea554016931155c10a8cc5e5b803090d9cd1ad8:src/main/resources/Views/ReaderInfo.fxml
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -82,7 +87,7 @@
                               <Insets bottom="6.0" left="6.0" right="6.0" top="26.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField fx:id="txtMobile" layoutX="10.0" layoutY="179.0" prefHeight="26.0" prefWidth="244.0" promptText="Mobile No.">
+                        <TextField fx:id="txtReaderAddress" layoutX="10.0" layoutY="179.0" prefHeight="26.0" prefWidth="244.0" promptText="Reader's CID">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -90,14 +95,14 @@
                               <Insets bottom="6.0" left="6.0" right="6.0" top="26.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextArea fx:id="txtAddress" prefHeight="96.0" prefWidth="285.0" promptText="Address">
+                        <TextField fx:id="txtReaderCID" prefHeight="96.0" prefWidth="285.0" promptText="Address">
                            <VBox.margin>
                               <Insets bottom="6.0" left="6.0" right="6.0" top="26.0" />
                            </VBox.margin>
                            <font>
                               <Font size="15.0" />
                            </font>
-                        </TextArea>
+                        </TextField>
                         <HBox alignment="BOTTOM_LEFT" prefHeight="63.0" prefWidth="285.0" VBox.vgrow="ALWAYS">
                            <VBox.margin>
                               <Insets bottom="6.0" left="6.0" right="6.0" top="16.0" />
@@ -124,14 +129,22 @@
                   </VBox>
                   <VBox alignment="TOP_CENTER" layoutX="364.0" layoutY="23.0" prefHeight="413.0" prefWidth="313.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="332.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="16.0">
                      <children>
-                        <TableView fx:id="table" prefHeight="452.0" prefWidth="379.0" VBox.vgrow="ALWAYS">
+                        <TableView fx:id="readerTable" prefHeight="452.0" prefWidth="379.0" VBox.vgrow="ALWAYS">
                           <columns>
-                            <TableColumn fx:id="idCol" prefWidth="75.0" text="Student ID" />
-                            <TableColumn fx:id="studentNameCol" prefWidth="75.0" text="Student's Name" />
+<<<<<<< HEAD:src/main/resources/Views/StudentInfo.fxml
+                            <TableColumn fx:id="idCol" prefWidth="75.0" text="Reader ID" />
+                            <TableColumn fx:id="studentNameCol" prefWidth="75.0" text="Reader's Name" />
                               <TableColumn fx:id="classCol" prefWidth="75.0" text="Class" />
                               <TableColumn fx:id="rollCol" prefWidth="75.0" text="Roll No." />
                               <TableColumn fx:id="mobileCol" prefWidth="75.0" text="Mobile No." />
                               <TableColumn fx:id="addressCol" prefWidth="75.0" text="Address" />
+=======
+                            <TableColumn fx:id="idCol" prefWidth="75.0" text="Reader's ID" />
+                            <TableColumn fx:id="readerNameCol" prefWidth="75.0" text="Reader's Name" />
+                              <TableColumn fx:id="readerPhoneCol" prefWidth="75.0" text="Reader's Phone" />
+                              <TableColumn fx:id="readerAddressCol" prefWidth="75.0" text="Reader's CID" />
+                              <TableColumn fx:id="readerCidCol" prefWidth="75.0" text="Address" />
+>>>>>>> 5ea554016931155c10a8cc5e5b803090d9cd1ad8:src/main/resources/Views/ReaderInfo.fxml
                               <TableColumn fx:id="issueBookCol" prefWidth="75.0" text="No. of Issue Books" />
                           </columns>
                            <columnResizePolicy>

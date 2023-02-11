@@ -11,13 +11,14 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="455.0" prefWidth="923.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.aptech.Controller.MenuController">
+<StackPane prefHeight="577.0" prefWidth="949.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.aptech.Controller.MenuController">
    <children>
-      <AnchorPane fx:id="anchorPane">
+      <AnchorPane fx:id="anchorPane" prefHeight="700.0" prefWidth="995.0">
          <stylesheets>
             <URL value="@Css/Style.css" />
          </stylesheets>
@@ -28,17 +29,23 @@
                      <children>
                         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="266.0" styleClass="menuPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Label alignment="CENTER" prefHeight="72.0" prefWidth="266.0" text="Library Management System">
-                                 <VBox.margin>
-                                    <Insets />
-                                 </VBox.margin>
-                                 <font>
-                                    <Font name="Arial" size="16.0" />
-                                 </font>
-                              </Label>
+                              <Pane prefHeight="139.0" prefWidth="252.0">
+                                 <children>
+                                    <ImageView fitHeight="131.0" fitWidth="269.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/splashScreen.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="11.0" layoutY="54.0" text="Library Management System" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Bold Italic" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
                               <Separator prefHeight="1.0" prefWidth="254.0">
                                  <VBox.margin>
-                                    <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                                    <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                                  </VBox.margin>
                               </Separator>
                               <Button fx:id="btnDashboard" alignment="BASELINE_LEFT" graphicTextGap="16.0" maxHeight="56.0" maxWidth="256.0" minHeight="56.0" minWidth="256.0" prefHeight="56.0" prefWidth="256.0" styleClass="menuButton" text="Dashboard" VBox.vgrow="ALWAYS">
@@ -53,6 +60,8 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
+<<<<<<< HEAD
+=======
                               <Button fx:id="btnIsuueReturnBook" alignment="BASELINE_LEFT" graphicTextGap="16.0" layoutX="16.0" layoutY="103.0" maxHeight="56.0" maxWidth="256.0" minHeight="56.0" minWidth="256.0" prefHeight="56.0" prefWidth="256.0" styleClass="menuButton" text="Issue / Return Book">
                                  <graphic>
                                     <ImageView fx:id="imgIsuueReturnBook" fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
@@ -65,7 +74,8 @@
                                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button fx:id="btnStudentInfo" alignment="BASELINE_LEFT" graphicTextGap="16.0" layoutX="10.0" layoutY="10.0" maxHeight="56.0" maxWidth="256.0" minHeight="56.0" minWidth="256.0" prefHeight="56.0" prefWidth="256.0" styleClass="menuButton" text="Student Info">
+>>>>>>> 5ea554016931155c10a8cc5e5b803090d9cd1ad8
+                              <Button fx:id="btnStudentInfo" alignment="BASELINE_LEFT" graphicTextGap="16.0" layoutX="10.0" layoutY="10.0" maxHeight="56.0" maxWidth="256.0" minHeight="56.0" minWidth="256.0" prefHeight="56.0" prefWidth="256.0" styleClass="menuButton" text="Reader Info">
                                  <VBox.margin>
                                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
                                  </VBox.margin>
@@ -76,6 +86,30 @@
                                        </image>
                                     </ImageView>
                                  </graphic>
+                              </Button>
+                              <Button fx:id="btnAuthor" alignment="BASELINE_LEFT" graphicTextGap="16.0" layoutX="10.0" layoutY="532.0" maxHeight="56.0" maxWidth="256.0" minHeight="56.0" minWidth="256.0" prefHeight="56.0" prefWidth="256.0" styleClass="menuButton" text="Author Info">
+                                 <graphic>
+                                    <ImageView fx:id="imgAbout11" fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/writer-icon-21.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="btnPulisher" alignment="BASELINE_LEFT" graphicTextGap="16.0" layoutX="16.0" layoutY="516.0" maxHeight="56.0" maxWidth="256.0" minHeight="56.0" minWidth="256.0" prefHeight="56.0" prefWidth="256.0" styleClass="menuButton" text="Pulisher Info">
+                                 <graphic>
+                                    <ImageView fx:id="imgAbout1" fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/2118.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                                 </VBox.margin>
                               </Button>
                                <Button fx:id="btnBookInfo" alignment="BASELINE_LEFT" graphicTextGap="16.0" layoutX="10.0" layoutY="61.0" maxHeight="56.0" maxWidth="256.0" minHeight="56.0" minWidth="256.0" prefHeight="56.0" prefWidth="256.0" styleClass="menuButton" text="Book Info">
                                  <VBox.margin>
@@ -89,6 +123,30 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
+                              <Button fx:id="btnCategory" alignment="BASELINE_LEFT" graphicTextGap="16.0" layoutX="10.0" layoutY="214.0" maxHeight="56.0" maxWidth="256.0" minHeight="56.0" minWidth="256.0" prefHeight="56.0" prefWidth="256.0" styleClass="menuButton" text="Category Info">
+                                 <VBox.margin>
+                                    <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                                 </VBox.margin>
+                                 <graphic>
+                                    <ImageView fx:id="imgAbout" fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/19-194508_book-stack-icon-free-clipart-library-library-transparent.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnIsuueReturnBook" alignment="BASELINE_LEFT" graphicTextGap="16.0" layoutX="16.0" layoutY="103.0" maxHeight="56.0" maxWidth="256.0" minHeight="56.0" minWidth="256.0" prefHeight="56.0" prefWidth="256.0" styleClass="menuButton" text="Issue Book">
+                                 <graphic>
+                                    <ImageView fx:id="imgIsuueReturnBook" fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/return_issueBook_balck.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                                 </VBox.margin>
+                              </Button>
                               <Button fx:id="btnIssuedBook" alignment="BASELINE_LEFT" graphicTextGap="16.0" layoutX="10.0" layoutY="163.0" maxHeight="56.0" maxWidth="256.0" minHeight="56.0" minWidth="256.0" prefHeight="56.0" prefWidth="256.0" styleClass="menuButton" text="All Issued Books">
                                  <VBox.margin>
                                     <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
@@ -97,18 +155,6 @@
                                     <ImageView fx:id="imgSetting" fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@images/setting_black.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button fx:id="btnAbout" alignment="BASELINE_LEFT" graphicTextGap="16.0" layoutX="10.0" layoutY="214.0" maxHeight="56.0" maxWidth="256.0" minHeight="56.0" minWidth="256.0" prefHeight="56.0" prefWidth="256.0" styleClass="menuButton" text="About">
-                                 <VBox.margin>
-                                    <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
-                                 </VBox.margin>
-                                 <graphic>
-                                    <ImageView fx:id="imgAbout" fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/about_black.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>

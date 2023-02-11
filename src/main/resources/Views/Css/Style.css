@@ -290,4 +290,17 @@
     -fx-cursor: hand;
     -fx-background-color: #fb8c00;
 }
+#btnCategory:hover{
+    -fx-cursor: hand;
+    -fx-background-color: #fb8c00;
+}
+#btnAuthor:hover{
+    -fx-cursor: hand;
+    -fx-background-color: #fb8c00;
+}
+#btnPulisher:hover{
+    -fx-cursor: hand;
+    -fx-background-color: #fb8c00;
+}
+
 /* Tab Style codding end here*/
