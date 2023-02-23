@@ -19,11 +19,11 @@ public class CategoryStatement implements DAORepository<Category> {
     @Override
     public void insert(Category category) {
         try {
-            String sql = "INSERT INTO category( `cat_name`, `cat_description`) VALUES(?,?)";
+            String sql = "INSERT INTO category(`cat_code` ,`cat_name`, `cat_description`) VALUES(?,?,?)";
             PreparedStatement pst = connection.prepareStatement(sql);
-
-            pst.setString(1,category.getCat_name());
-            pst.setString(2,category.getCat_description());
+            pst.setString(1,category.getCat_code());
+            pst.setString(2,category.getCat_name());
+            pst.setString(3,category.getCat_description());
             pst.executeUpdate();
         }catch (SQLException e){
             e.printStackTrace();
@@ -33,7 +33,18 @@ public class CategoryStatement implements DAORepository<Category> {
 
     @Override
     public void update( Category category) {
+        try {
+            String sql = "UPDATE category SET cat_code =?, cat_name =?,cat_description =? WHERE id =?";
+            PreparedStatement pst = connection.prepareStatement(sql);
+            pst.setString(1, category.getCat_code());
+            pst.setString(2, category.getCat_name());
+            pst.setString(3, category.getCat_description());
+            pst.setInt(4,category.getCat_id());
 
+            pst.executeUpdate();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -44,6 +55,14 @@ public class CategoryStatement implements DAORepository<Category> {
 
     @Override
     public void remove(Category category) {
+        try {
+            String sql = "DELETE FROM category WHERE id =?";
+            PreparedStatement pst = connection.prepareStatement(sql);
+            pst.setInt(1, category.getCat_id());
+            pst.executeUpdate();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
 
     }
 
@@ -57,7 +76,7 @@ public class CategoryStatement implements DAORepository<Category> {
             while(rs.next()){
                 Category category = new Category();
                 category.setCat_id(rs.getInt( "id"));
-
+                category.setCat_code (rs.getString(  "cat_code"));
                 category.setCat_name (rs.getString(  "cat_name"));
                 category.setCat_description (rs.getString( "cat_description"));
                 categories.add( category);

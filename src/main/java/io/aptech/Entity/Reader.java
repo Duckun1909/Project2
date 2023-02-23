@@ -7,15 +7,20 @@ public class Reader {
     private String reader_address;
     private String reader_cid;
 
-    public Reader() {
-    }
+    private String reader_code;
 
-    public Reader(int reader_id, String reader_name, String reader_phone, String reader_address, String reader_cid) {
+    Book[] books;
+
+    public Reader() {}
+
+
+    public Reader(int reader_id, String reader_name, String reader_phone, String reader_address, String reader_cid, String reader_code) {
         this.reader_id = reader_id;
         this.reader_name = reader_name;
         this.reader_phone = reader_phone;
         this.reader_address = reader_address;
         this.reader_cid = reader_cid;
+        this.reader_code = reader_code;
     }
 
     public int getReader_id() {
@@ -56,6 +61,14 @@ public class Reader {
 
     public void setReader_cid(String reader_cid) {
         this.reader_cid = reader_cid;
+    }
+
+    public String getReader_code() {
+        return reader_code;
+    }
+
+    public void setReader_code(String reader_code) {
+        this.reader_code = reader_code;
     }
 
     @Override

@@ -45,6 +45,8 @@ public class MenuController implements Initializable {
     @FXML
     private BorderPane mainBorderPane;
 
+    @FXML AnchorPane dasbord;
+
 
 
 
@@ -60,6 +62,10 @@ public class MenuController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        viewPane = FxmlLoader.getViewPane("/Views/Dashbord.fxml");
+        mainBorderPane.setCenter(viewPane);
+        btnDashboard.setStyle("-fx-background-color: #fb8c00");
+
 
         ft = new FillTransition();
         activeMenuButton = btnDashboard;
@@ -76,8 +82,30 @@ public class MenuController implements Initializable {
                 btnAuthor.setStyle("-fx-background-color: #fff");
                 btnPulisher.setStyle("-fx-background-color: #fff");
                 btnCategory.setStyle("-fx-background-color: #fff");
+                btnDashboard.setStyle("-fx-background-color: #fff");
+
             }
         });
+
+        btnDashboard.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                viewPane = FxmlLoader.getViewPane("/Views/Dashbord.fxml");
+                mainBorderPane.setCenter(viewPane);
+                btnDashboard.setStyle("-fx-background-color: #fb8c00");
+
+                btnBookInfo.setStyle("-fx-background-color: #fff");
+                btnStudentInfo.setStyle("-fx-background-color: #fff");
+                btnIsuueReturnBook.setStyle("-fx-background-color: #fff");
+                btnIssuedBook.setStyle("-fx-background-color: #fff");
+                btnAuthor.setStyle("-fx-background-color: #fff");
+                btnPulisher.setStyle("-fx-background-color: #fff");
+                btnCategory.setStyle("-fx-background-color: #fff");
+
+            }
+        });
+
+
 
         btnStudentInfo.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -91,6 +119,7 @@ public class MenuController implements Initializable {
                 btnAuthor.setStyle("-fx-background-color: #fff");
                 btnPulisher.setStyle("-fx-background-color: #fff");
                 btnCategory.setStyle("-fx-background-color: #fff");
+                btnDashboard.setStyle("-fx-background-color: #fff");
             }
         });
         btnIsuueReturnBook.setOnAction(new EventHandler<ActionEvent>() {
@@ -105,6 +134,7 @@ public class MenuController implements Initializable {
                 btnAuthor.setStyle("-fx-background-color: #fff");
                 btnPulisher.setStyle("-fx-background-color: #fff");
                 btnCategory.setStyle("-fx-background-color: #fff");
+                btnDashboard.setStyle("-fx-background-color: #fff");
             }
         });
 
@@ -120,6 +150,7 @@ public class MenuController implements Initializable {
                 btnAuthor.setStyle("-fx-background-color: #fff");
                 btnPulisher.setStyle("-fx-background-color: #fff");
                 btnCategory.setStyle("-fx-background-color: #fff");
+                btnDashboard.setStyle("-fx-background-color: #fff");
             }
         });
         btnAuthor.setOnAction(new EventHandler<ActionEvent>() {
@@ -134,6 +165,7 @@ public class MenuController implements Initializable {
                 btnAuthor.setStyle("-fx-background-color: #fb8c00");
                 btnPulisher.setStyle("-fx-background-color: #fff");
                 btnCategory.setStyle("-fx-background-color: #fff");
+                btnDashboard.setStyle("-fx-background-color: #fff");
             }
         });
         btnPulisher.setOnAction(new EventHandler<ActionEvent>() {
@@ -148,6 +180,7 @@ public class MenuController implements Initializable {
                 btnAuthor.setStyle("-fx-background-color: #fff");
                 btnPulisher.setStyle("-fx-background-color: #fb8c00");
                 btnCategory.setStyle("-fx-background-color: #fff");
+                btnDashboard.setStyle("-fx-background-color: #fff");
             }
         });
         btnCategory.setOnAction(new EventHandler<ActionEvent>() {
@@ -162,6 +195,7 @@ public class MenuController implements Initializable {
                 btnAuthor.setStyle("-fx-background-color: #fff");
                 btnPulisher.setStyle("-fx-background-color: #fff");
                 btnCategory.setStyle("-fx-background-color: #fb8c00");
+                btnDashboard.setStyle("-fx-background-color: #fff");
             }
         });
     }
