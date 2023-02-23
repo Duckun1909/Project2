@@ -1,9 +1,7 @@
 package io.aptech.Controller;
 
-import io.aptech.Entity.Book;
-import io.aptech.Entity.Reader;
-import io.aptech.Model.BokInfoStatement;
-import io.aptech.Model.ReaderInfoStatement;
+import io.aptech.Entity.*;
+import io.aptech.Model.*;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -12,10 +10,11 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.time.LocalDateTime;
+import java.util.*;
+import java.sql.Date;
 
 public class BookIssueReturnController implements Initializable {
     @FXML private TableView<Book> bookTable;
@@ -41,12 +40,19 @@ public class BookIssueReturnController implements Initializable {
     @FXML private TableColumn<Reader, String> readerCidCol;
     @FXML private DatePicker returnDate;
 
+    @FXML private Button btnConfirm;
+
 
     private BokInfoStatement bookInfoStatement = new BokInfoStatement();
     private ReaderInfoStatement readerInfoStatement = new ReaderInfoStatement();
+    private BorrowStatement borrowStatement = new BorrowStatement();
+    private BorrowDetailStatement borrowDetailStatement = new BorrowDetailStatement();
 
     private ObservableList<Book> books;
     private ObservableList<Reader> readers;
+
+    private Reader reader;
+
 
     public void setValueToTableReader(){
         readers = readerInfoStatement.getAll();
@@ -88,7 +94,7 @@ public class BookIssueReturnController implements Initializable {
 
 
         readerTable.setOnMouseClicked(e->{
-            Reader reader = readerTable.getSelectionModel().getSelectedItem();
+            reader = readerTable.getSelectionModel().getSelectedItem();
             System.out.println(reader.toString());
         });
 
@@ -100,6 +106,35 @@ public class BookIssueReturnController implements Initializable {
                 bookList.add(book);
             }
             System.out.println(bookList.toString());
+        });
+
+        btnConfirm.setOnMouseClicked(e->{
+            Date brdate = Date.valueOf(LocalDate.now());
+            Date redate = Date.valueOf(returnDate.getValue());
+            float payment= 0.0F;
+            System.out.println(books.size());
+            for(Book b:books){
+                payment+=b.getBook_price();
+            }
+            Borrow br = new Borrow(0, reader, payment);
+            borrowStatement.insert(br);
+            System.out.println(payment);
+
+            Borrow borrow = new Borrow();
+            borrow.setBorrow_id(borrowStatement.getLastInsertID());
+            System.out.println(borrowStatement.getLastInsertID());
+            System.out.println(borrow.toString());
+            for(Book b:bookList){
+                BorrowDetail brtail = new BorrowDetail();
+                brtail.setId(0);
+                brtail.setBook(b);
+                brtail.setBorrow(borrow);
+                brtail.setBorowDate(brdate);
+                brtail.setReturnDate(redate);
+                brtail.setStatus(String.valueOf(BorrowDetailStatus.BORROWING));
+                borrowDetailStatement.insert(brtail);
+                System.out.println(1);
+            }
         });
     }
 }

@@ -10,7 +10,8 @@ public class Publisher {
     public Publisher() {
     }
 
-    public Publisher( String pus_name, String pus_email, String pus_web, String pus_address) {
+    public Publisher(int pus_id, String pus_name, String pus_email, String pus_web, String pus_address) {
+        this.pus_id = pus_id;
         this.pus_name = pus_name;
         this.pus_email = pus_email;
         this.pus_web = pus_web;
