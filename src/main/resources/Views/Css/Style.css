@@ -76,8 +76,13 @@
   these classes used in menu button manually through java code.
   code see in MenuController Class.
 */
+
+
+/*me nuu*/
 .menuPane{
-    -fx-background-color: WHITE;
+    -fx-background-color: -webkit-linear-gradient(to top, #59c173, #a17fe0, #5d26c1);
+    -fx-background-color: #59c173;
+    -fx-background-color: linear-gradient(to right,#59c173, #a17fe0, #5d26c1);
     -fx-effect: dropshadow( GAUSSIAN , rgba(0, 0, 0, 0.26), 30, 0.30, 0, 10);
 }
 .menuButton{
@@ -98,7 +103,9 @@
     -fx-effect: dropshadow( GAUSSIAN , rgba(0, 0, 0, 0.26), 15, 0.16, 0, 4);
 }
 .menuButtonActive{
-    -fx-background-color: RED;
+    -fx-background-color: -webkit-linear-gradient(to right, #59c173, #a17fe0, #5d26c1);
+    -fx-background-color: #59c173;
+    -fx-background-color: linear-gradient(to right,#59c173, #a17fe0, #5d26c1);
     -fx-text-fill: white;
     -fx-font-size: 16px;
     -fx-cursor: hand;
@@ -154,7 +161,9 @@
 }
 
 .flatAnchor{
-    -fx-background-color: #fb8c00;
+    -fx-background-color: -webkit-linear-gradient(to right, #59c173, #a17fe0, #5d26c1);
+    -fx-background-color: #59c173;
+    -fx-background-color: linear-gradient(to right,#59c173, #a17fe0, #5d26c1);
     -fx-border-radius: 16px;
     -fx-background-radius: 16px;
 }
@@ -181,7 +190,9 @@
 }
 
 .flatAnchorWithEffect1{
-    -fx-background-color: #fb8c00;
+    -fx-background-color: -webkit-linear-gradient(to right, #59c173, #a17fe0, #5d26c1);
+    -fx-background-color: #59c173;
+    -fx-background-color: linear-gradient(to right,#59c173, #a17fe0, #5d26c1);
     -fx-border-radius: 16px;
     -fx-background-radius: 16px;
     -fx-effect: dropshadow( GAUSSIAN , rgba(0, 0, 0, 0.26), 15, 0.16, 0, 4);
@@ -226,23 +237,27 @@
 .table-view .column-header-background .label{
     -fx-background-color: transparent;
     -fx-text-fill: white;
+    -fx-font-size: 17px;
 }
 
 .table-view .column-header {
     -fx-background-color: transparent;
 }
-
+/*font chữ  */
 .table-view .table-cell{
-    -fx-text-fill: white;
+    -fx-text-fill: black;
+    -fx-font-size: 15px;
 }
 
 .table-row-cell{
-    -fx-background-color: -fx-table-cell-border-color, #fb8c00;
+    -fx-background-color: -fx-table-cell-border-color, #fff;
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em; /* 0 */
 }
 .table-row-cell:selected {
-    -fx-background-color: grey;
+    -fx-background-color: #a8ff78;
+    -fx-background-color: -webkit-linear-gradient(to right, #a8ff78, #78ffd6);
+    -fx-background-color: linear-gradient(to right, #a8ff78, #78ffd6);;
 }
 
 .jfx-date-picker{
@@ -252,7 +267,7 @@
 
 /* Tab Style codding end here*/
 .tab{
-    -fx-background-color: #fb8c00;
+    -fx-background-color: #ff4061;
     -fx-pref-width: 356px;
     -fx-pref-height: 56px;
     -fx-background-radius: 16 16 16 16, 0 0 0 0, 0 0 0 0;
@@ -262,45 +277,45 @@
     -fx-cursor: hand;
 }
 .tab-header-background{
-    -fx-background-color: #fb8c00;
+    -fx-background-color: #ff4061;
     -fx-background-radius: 16 16 0 0, 0 0 0 0, 0 0 0 0;
     -fx-border-radius: 16 16 0 0, 0 0 0 0;
 }
 #btnBookInfo:hover {
     -fx-cursor: hand;
-    -fx-background-color: #fb8c00;
+    -fx-background-color: #ff4061;
 }
 #btnStudentInfo:hover{
     -fx-cursor: hand;
-    -fx-background-color: #fb8c00;
+    -fx-background-color: #ff4061;
 }
 #btnDashboard:hover{
     -fx-cursor: hand;
-    -fx-background-color: #fb8c00;
+    -fx-background-color: #ff4061;
 }
 #btnIsuueReturnBook:hover{
     -fx-cursor: hand;
-    -fx-background-color: #fb8c00;
+    -fx-background-color: #ff4061;
 }
 #btnAbout:hover{
     -fx-cursor: hand;
-    -fx-background-color: #fb8c00;
+    -fx-background-color: #ff4061;
 }
 #btnIssuedBook:hover{
     -fx-cursor: hand;
-    -fx-background-color: #fb8c00;
+    -fx-background-color: #ff4061;
 }
 #btnCategory:hover{
     -fx-cursor: hand;
-    -fx-background-color: #fb8c00;
+    -fx-background-color: #ff4061;
 }
 #btnAuthor:hover{
     -fx-cursor: hand;
-    -fx-background-color: #fb8c00;
+    -fx-background-color: #ff4061;
 }
 #btnPulisher:hover{
     -fx-cursor: hand;
-    -fx-background-color: #fb8c00;
+    -fx-background-color: #ff4061;
 }
 
 

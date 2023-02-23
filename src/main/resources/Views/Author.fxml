@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="654.0" prefWidth="1009.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane prefHeight="654.0" prefWidth="1009.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.aptech.Controller.AuthorController">
     <stylesheets>
         <URL value="@Css/Style.css" />
     </stylesheets>
@@ -52,7 +52,7 @@
                     <children>
                         <VBox layoutX="14.0" layoutY="14.0" prefHeight="374.0" prefWidth="297.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0">
                             <children>
-                                <TextField fx:id="txtSID" disable="true" editable="false" prefHeight="26.0" prefWidth="244.0" promptText="Author ID">
+                                <TextField fx:id="txtAuthorID" disable="true" editable="false" prefHeight="26.0" prefWidth="244.0" promptText="Author ID" style="-fx-text-fill: grey;">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
@@ -60,7 +60,7 @@
                                         <Insets bottom="6.0" left="6.0" right="6.0" top="26.0" />
                                     </VBox.margin>
                                 </TextField>
-                                <TextField fx:id="txtStudentName" layoutX="16.0" layoutY="16.0" prefHeight="26.0" prefWidth="244.0" promptText="Author's Name">
+                                <TextField fx:id="txtAuthorName" layoutX="16.0" layoutY="16.0" prefHeight="26.0" prefWidth="244.0" promptText="Author's Name">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
@@ -68,7 +68,7 @@
                                         <Insets bottom="6.0" left="6.0" right="6.0" top="26.0" />
                                     </VBox.margin>
                                 </TextField>
-                                <TextArea fx:id="txtAddress" prefHeight="96.0" prefWidth="285.0" promptText="Author Description">
+                                <TextArea fx:id="txtAuthorDescription" prefHeight="96.0" prefWidth="285.0" promptText="Author Description">
                                     <VBox.margin>
                                         <Insets bottom="6.0" left="6.0" right="6.0" top="26.0" />
                                     </VBox.margin>
@@ -102,11 +102,11 @@
                         </VBox>
                         <VBox alignment="TOP_CENTER" layoutX="364.0" layoutY="23.0" prefHeight="413.0" prefWidth="313.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="332.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="16.0">
                             <children>
-                                <TableView fx:id="table" prefHeight="452.0" prefWidth="379.0" VBox.vgrow="ALWAYS">
+                                <TableView fx:id="authorTableView" prefHeight="452.0" prefWidth="379.0" VBox.vgrow="ALWAYS">
                                     <columns>
                                         <TableColumn fx:id="idCol" prefWidth="75.0" text="Author ID" />
-                                        <TableColumn fx:id="studentNameCol" prefWidth="75.0" text="Author's Name" />
-                                        <TableColumn fx:id="addressCol" prefWidth="75.0" text="Author Description" />
+                                        <TableColumn fx:id="authorNameCol" prefWidth="75.0" text="Author's Name" />
+                                        <TableColumn fx:id="authorDescriptionCol" prefWidth="75.0" text="Author Description" />
                                         <TableColumn fx:id="issueBookCol" prefWidth="75.0" text="No. of Issue Books" />
                                     </columns>
                                     <columnResizePolicy>

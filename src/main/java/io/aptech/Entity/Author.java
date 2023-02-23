@@ -40,10 +40,6 @@ public class Author {
 
     @Override
     public String toString() {
-        return "Author{" +
-                "id=" + au_id +
-                ", au_name='" + au_name + '\'' +
-                ", au_description='" + au_description + '\'' +
-                '}';
+        return this.getAu_name();
     }
 }

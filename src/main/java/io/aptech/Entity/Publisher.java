@@ -59,12 +59,6 @@ public class Publisher {
 
     @Override
     public String toString() {
-        return "Publisher{" +
-                "pus_id=" + pus_id +
-                ", pus_name='" + pus_name + '\'' +
-                ", pus_email='" + pus_email + '\'' +
-                ", pus_web='" + pus_web + '\'' +
-                ", pus_address='" + pus_address + '\'' +
-                '}';
+        return this.getPus_name();
     }
 }
