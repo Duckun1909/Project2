@@ -74,15 +74,19 @@ public class BookInfoController implements Initializable {
     ObservableList<Publisher> listPublisherNames = publisherStatement.getAll();
     ObservableList<Category> listCategoryNames = categoryStatement.getAll();
     public void setValueCategoryForm(Book book){
+
         String readerCode = book.getBook_id()==0?"":String.valueOf(book.getBook_id());
+
         txtBookId.setText(readerCode);
         txtBookName.setText(book.getBook_name());
         txtBookPrice.setText(String.valueOf(book.getBook_price()));
         txtDescription.setText(book.getBook_description());
         txtStatus.setText(book.getBook_status());
+
         txtCategory.setValue(book.getCategory());
         txtPublisher.setValue(book.getPublisher());
         txtAuthor.setValue(book.getAuthor());
+
 
     }
 
@@ -174,19 +178,30 @@ public class BookInfoController implements Initializable {
             public void handle(ActionEvent actionEvent) {
                 Book book = bookTableView.getSelectionModel().getSelectedItem();
 
+                Category c = txtCategory.getSelectionModel().getSelectedItem();
+                Publisher p =txtPublisher.getSelectionModel().getSelectedItem();
+                Author a = txtAuthor.getSelectionModel().getSelectedItem();
+                System.out.println(a.getAu_id());
+
+
+
                 book.setBook_name(txtBookName.getText());
                 book.setBook_price(Float.parseFloat(txtBookPrice.getText()));
                 book.setBook_status(txtStatus.getText());
-                book.setCategory_name(listCategoryNames.toString());
-                book.setAuthor_name(listAuthorNames.toString());
-                book.setPublisher_name(listPublisherNames.toString());
+
+
                 book.setBook_description(txtDescription.getText());
+                book.setCategory(c);
+                book.setAuthor(a);
+                book.setPublisher(p);
+
                 bokInfoStatement.update(book);
                 books = bokInfoStatement.getAll();
                 bookTableView.setItems(books);
                 bookTableView.refresh();
                 btnAdd.setDisable(false);
                 setValueCategoryForm(new Book());
+
             }
         });
         txtBookName.setOnKeyReleased(e->{

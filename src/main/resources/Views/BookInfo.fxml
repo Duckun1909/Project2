@@ -53,7 +53,9 @@
                     <children>
                         <VBox layoutX="14.0" layoutY="14.0" prefHeight="374.0" prefWidth="297.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0">
                             <children>
-                                <TextField fx:id="txtBookId" disable="true" editable="false" prefHeight="26.0" prefWidth="244.0" promptText="Code" style="-fx-text-fill: black;">
+
+                                <TextField fx:id="txtBookId" disable="true" editable="false" prefHeight="26.0" prefWidth="244.0" promptText="Code" style="-fx-text-fill: green;">
+
                                     <font>
                                         <Font size="15.0" />
                                     </font>
