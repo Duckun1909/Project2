@@ -5,6 +5,8 @@ import io.aptech.Entity.Category;
 import io.aptech.Model.AuthorStatement;
 import io.aptech.Model.CategoryStatement;
 import io.aptech.Model.Random;
+import io.aptech.Validation.AuthorValidation;
+import io.aptech.Validation.CategoryValidation;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -41,7 +43,10 @@ public class CategoryController implements Initializable{
     @FXML
     private TableColumn<Category, String> cdes;
 
-
+    @FXML
+    private Label NameLabel;
+    @FXML
+    private Label DesLabel;
     @FXML
     private Button btnAdd;
     @FXML
@@ -52,7 +57,7 @@ public class CategoryController implements Initializable{
     @FXML
     private TableView<Category> tableCategory = new TableView<Category>();
 
-
+    private String flag = "true";
     public void setValueCategoryForm(Category category){
         String readerCode = category.getCat_code()==null?"":String.valueOf(category.getCat_code());
         txtBookCode.setText(readerCode);
@@ -78,19 +83,57 @@ public class CategoryController implements Initializable{
            txtBookCode.setText(Random.randomCode(txtBookName.getText()));
         });
 
+
+        txtBookName.setOnKeyReleased(e-> {
+
+            if ((!CategoryValidation.isCategoryName(txtBookName.getText())) && !txtBookName.getText().equals("")) {
+                NameLabel.setText("Category Name is not valid");
+                txtBookName.setStyle("-fx-border-color: red");
+                flag= "false";
+            }else if (txtBookName.getText()== "") {
+                txtBookName.setStyle("-fx-border-color: White");
+                NameLabel.setText("");
+                flag= "false";
+            }
+            else {
+                txtDescription.setStyle("-fx-border-color: green");
+                NameLabel.setText("");
+                flag= "true";
+            }
+        });
+
+
         btnAdd.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 Category c = new Category();
-                c.setCat_code(txtBookCode.getText());
+                if (txtBookName.getText().isEmpty()){
+                    NameLabel.setText("you must enter this field");
+                    txtBookName.setStyle("-fx-border-color: red");
+                }
+                else if (txtDescription.getText().isEmpty()) {
+                    DesLabel.setText("you must enter this field");
+                    txtDescription.setStyle("-fx-border-color: red");
+                }
+                else if (!flag.equals("true")) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION, "Please check your form again!!!!", ButtonType.OK);
+                    alert.setTitle("Check your information");
+                    alert.showAndWait();
+                }else {
+                    txtBookName.setStyle("-fx-border-color: green");
+                    NameLabel.setText("");
+                    txtDescription.setStyle("-fx-border-color: green");
+                    DesLabel.setText("");
+                    c.setCat_code(txtBookCode.getText());
 //                System.out.println(txtBookCode.getText());
-                c.setCat_name(txtBookName.getText());
-                c.setCat_description(txtDescription.getText());
-                categoryStatement.insert(c);
-                categories  =  categoryStatement.getAll();
-                tableCategory.setItems(categories);
-                tableCategory.refresh();
-                setValueCategoryForm(new Category());
+                    c.setCat_name(txtBookName.getText());
+                    c.setCat_description(txtDescription.getText());
+                    categoryStatement.insert(c);
+                    categories = categoryStatement.getAll();
+                    tableCategory.setItems(categories);
+                    tableCategory.refresh();
+                    setValueCategoryForm(new Category());
+                }
             }
         });
         btnUpdate.setOnAction(new EventHandler<ActionEvent>() {
@@ -100,12 +143,30 @@ public class CategoryController implements Initializable{
                 category.setCat_code(txtBookCode.getText());
                 category.setCat_name(txtBookName.getText());
                 category.setCat_description(txtDescription.getText());
-                categoryStatement.update(category);
-                categories = categoryStatement.getAll();
-                tableCategory.setItems(categories);
-                tableCategory.refresh();
-                setValueCategoryForm(new Category());
-                btnAdd.setDisable(false);
+                if (txtBookName.getText().isEmpty()){
+                    NameLabel.setText("you must enter this field");
+                    txtBookName.setStyle("-fx-border-color: red");
+                }
+                else if (txtDescription.getText().isEmpty()) {
+                    DesLabel.setText("you must enter this field");
+                    txtDescription.setStyle("-fx-border-color: red");
+                }
+                else if (!flag.equals("true")) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION, "Please check your form again!!!!", ButtonType.OK);
+                    alert.setTitle("Check your information");
+                    alert.showAndWait();
+                }else {
+                    txtBookName.setStyle("-fx-border-color: green");
+                    NameLabel.setText("");
+                    txtDescription.setStyle("-fx-border-color: green");
+                    DesLabel.setText("");
+                    categoryStatement.update(category);
+                    categories = categoryStatement.getAll();
+                    tableCategory.setItems(categories);
+                    tableCategory.refresh();
+                    setValueCategoryForm(new Category());
+                    btnAdd.setDisable(false);
+                }
             }
         });
 

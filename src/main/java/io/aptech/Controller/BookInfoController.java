@@ -4,7 +4,9 @@ import io.aptech.Entity.Author;
 import io.aptech.Entity.Book;
 import io.aptech.Entity.Category;
 import io.aptech.Entity.Publisher;
+//import io.aptech.Exception.NotValidBookCode;
 import io.aptech.Model.*;
+import io.aptech.Validation.BookValidation;
 import javafx.beans.property.SimpleStringProperty;
 import io.aptech.Validation.BookValidation;
 import javafx.beans.property.SimpleStringProperty;
@@ -254,6 +256,7 @@ public class BookInfoController implements Initializable {
                 txtDescription.setText(book.getBook_description());
                 btnAdd.setDisable(true);
                 setValueCategoryForm(book);
+
             }
         });
         btnUpdate.setOnAction(new EventHandler<ActionEvent>() {

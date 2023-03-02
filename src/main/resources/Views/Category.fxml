@@ -68,14 +68,30 @@
                                         <Insets left="6.0" right="6.0" top="26.0" />
                                     </VBox.margin>
                                 </TextField>
+                        <Label fx:id="NameLabel" alignment="CENTER" prefHeight="20.0" prefWidth="287.0" textFill="#e81818">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="6.0" right="6.0" />
+                           </VBox.margin>
+                        </Label>
                                 <TextArea fx:id="txtDescription" prefHeight="92.0" prefWidth="286.0" promptText="Description of Book">
                                     <VBox.margin>
-                                        <Insets left="6.0" right="6.0" top="26.0" />
+                                        <Insets left="6.0" right="6.0" top="9.0" />
                                     </VBox.margin>
                                     <font>
                                         <Font size="15.0" />
                                     </font>
                                 </TextArea>
+                        <Label fx:id="DesLabel" alignment="CENTER" layoutX="16.0" layoutY="124.0" prefHeight="20.0" prefWidth="287.0" textFill="#e81818">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="6.0" right="6.0" />
+                           </VBox.margin>
+                        </Label>
                                 <HBox alignment="BOTTOM_LEFT" prefHeight="84.0" prefWidth="285.0" VBox.vgrow="ALWAYS">
                                     <VBox.margin>
                                         <Insets bottom="6.0" left="6.0" right="6.0" top="26.0" />

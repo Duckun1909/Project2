@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Button?>
+<StackPane fx:id="stackPane" styleClass="roundPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" >
+   <stylesheets>
+      <URL value="@Css/Style.css" />
+   </stylesheets>
+   <children>
+      <AnchorPane fx:id="rootPane" prefHeight="321.0" prefWidth="632.0" styleClass="roundPane">
+         <children>
+            <ImageView fx:id="bgImage" fitHeight="307.0" fitWidth="630.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@images/login.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="339.0" layoutY="51.0" prefHeight="224.0" prefWidth="233.0" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="339.0" AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="51.0">
+               <children>
+                  <TextField fx:id="txtUsername"  layoutY="22.0" prefHeight="26.0" prefWidth="226.0" promptText="Username" />
+                  <PasswordField fx:id="txtPassword"  layoutY="93.0" prefHeight="26.0" prefWidth="226.0" promptText="Password" />
+                  <Button fx:id="btnLogin" defaultButton="true" layoutX="14.0" layoutY="164.0"  prefHeight="39.0" prefWidth="104.0" styleClass="loginButton" text="Login" />
+                  <Button fx:id="btnCancel" cancelButton="true" layoutX="129.0" layoutY="164.0" prefHeight="39.0" prefWidth="104.0" styleClass="loginButton" text="Cancel" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
