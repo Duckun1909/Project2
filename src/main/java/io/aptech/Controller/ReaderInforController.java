@@ -1,5 +1,6 @@
 package io.aptech.Controller;
 
+import io.aptech.Entity.Publisher;
 import io.aptech.Entity.Reader;
 import io.aptech.Model.Random;
 import io.aptech.Model.ReaderInfoStatement;
@@ -35,20 +36,17 @@ public class ReaderInforController implements Initializable {
     @FXML private Button btnDelete;
     @FXML
     TableView<Reader> readerTable;
+
     @FXML
-    TableColumn<Reader, String> readerID;
-    @FXML
-    TableColumn<Reader, String> readerCodeCol;
+    TableColumn<Reader, String> readerCode;
     @FXML
     TableColumn<Reader, String> readerNameCol;
     @FXML
     TableColumn<Reader, String> readerPhoneCol;
     @FXML
-    TableColumn<Reader, String> readerAddressCol;
+    TableColumn<Reader, String> readerCID;
     @FXML
-    TableColumn<Reader, String> readerCidCol;
-    @FXML
-    TableColumn<Reader, String> issueBookCol;
+    TableColumn<Reader, String> readerAdd;
 
     private ObservableList<Reader> readers;
 
@@ -61,19 +59,19 @@ public class ReaderInforController implements Initializable {
         readerTable.refresh();
         if(!readers.isEmpty()){
             System.out.println(1);
-            readerID.setCellValueFactory(new PropertyValueFactory<Reader, String>("reader_id"));
-            readerCodeCol.setCellValueFactory(new PropertyValueFactory<Reader, String>("reader_code"));
+
+            readerCode.setCellValueFactory(new PropertyValueFactory<Reader, String>("reader_code"));
             readerNameCol.setCellValueFactory(new PropertyValueFactory<Reader, String>("reader_name"));
             readerPhoneCol.setCellValueFactory(new PropertyValueFactory<Reader, String>("reader_phone"));
-            readerAddressCol.setCellValueFactory(new PropertyValueFactory<Reader, String>("reader_address"));
-            readerCidCol.setCellValueFactory(new PropertyValueFactory<Reader, String>("reader_cid"));
+            readerAdd.setCellValueFactory(new PropertyValueFactory<Reader, String>("reader_address"));
+            readerCID.setCellValueFactory(new PropertyValueFactory<Reader, String>("reader_cid"));
             readerTable.setItems(readers);
         }
     }
 
     public void setValueReaderForm(Reader reader){
         String readerCode = reader.getReader_code()==null?"":String.valueOf(reader.getReader_code());
-        txtReaderID.setText(String.valueOf(reader.getReader_id()));
+//        txtReaderID.setText(String.valueOf(reader.getReader_id()));
         txtReaderCode.setText(readerCode);
         txtReaderName.setText(reader.getReader_name());
         txtReaderPhone.setText(reader.getReader_phone());
@@ -118,20 +116,18 @@ public class ReaderInforController implements Initializable {
             }
         });
         btnUpdate.setOnMouseClicked((e->{
-            Reader reader = new Reader(Integer.parseInt(txtReaderID.getText()), txtReaderName.getText(), txtReaderPhone.getText(), txtReaderAddress.getText(), txtReaderCID.getText(), txtReaderCode.getText());
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Are you sure you want to update this reader?", ButtonType.YES, ButtonType.NO);
-            alert.setTitle("Reader confirmation");// line 2
-            alert.setHeaderText("This reader will be permanently updated!");
-            alert.showAndWait();
-            System.out.println(reader.toString());
-            if (alert.getResult().equals(ButtonType.YES)){
-                System.out.println(reader);
-                readerInfoStatement.update(reader);
-                readers.remove(readerTable.getSelectionModel().getSelectedCells());
-                setValueToTable();
-                setValueReaderForm(new Reader());
-                btnAdd.setDisable(false);
-            }
-        }));
+            Reader reader = readerTable.getSelectionModel().getSelectedItem();
+            reader.setReader_name(txtReaderName.getText());
+            reader.setReader_phone(txtReaderPhone.getText());
+            reader.setReader_address(txtReaderAddress.getText());
+            reader.setReader_cid(txtReaderCID.getText());
+            readerInfoStatement.update(reader);
+//                publishers = publisherStatement.getAll();
+            readerTable.setItems(readers);
+            readerTable.refresh();
+            setValueReaderForm(new Reader());
+            btnAdd.setDisable(false);
+            }));
+
     }
 }

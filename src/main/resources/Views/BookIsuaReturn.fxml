@@ -50,8 +50,8 @@
                                         <Button fx:id="btnBookSearch" layoutX="320.0" layoutY="34.0" mnemonicParsing="false" style="-fx-background-color: red;" text="Tìm kiếm" AnchorPane.rightAnchor="100.0" />
                                         <VBox layoutY="91.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0">
                                             <children>
-                                    <TableView fx:id="bookTable" prefHeight="386.0" prefWidth="308.0">
-                                       <columns>
+                                                <TableView fx:id="bookTable" prefHeight="386.0" prefWidth="308.0">
+                                                    <columns>
                                                         <TableColumn fx:id="bookIDCol" prefWidth="75.0" style="fx-border-style: solid;" visible="false" />
                                                         <TableColumn fx:id="bookCodeCol" prefWidth="75.0" style="fx-border-style: solid;" text="Code" />
                                                         <TableColumn fx:id="bookNameCol" prefWidth="143.99993896484375" text="Name" />
@@ -60,11 +60,11 @@
                                                         <TableColumn fx:id="bookCategoryCol" minWidth="1.59991455078125" prefWidth="101.0" text="Category" />
                                                         <TableColumn fx:id="bookAuthorCol" minWidth="1.59991455078125" prefWidth="101.0" text="Author" />
                                                         <TableColumn fx:id="bookStatusCol" minWidth="1.59991455078125" prefWidth="101.0" text="Status" />
-                                       </columns>
-                                       <columnResizePolicy>
-                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                                       </columnResizePolicy>
-                                    </TableView>
+                                                    </columns>
+                                                    <columnResizePolicy>
+                                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                    </columnResizePolicy>
+                                                </TableView>
                                             </children>
                                         </VBox>
                                         <Text layoutX="128.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book List" AnchorPane.leftAnchor="300.0">
@@ -120,7 +120,7 @@
                                 <Font size="14.0" />
                             </font>
                         </Label>
-                  <DatePicker fx:id="returnDate" layoutX="321.0" layoutY="535.0" prefHeight="29.0" prefWidth="198.0" promptText="Choice return date you want" />
+                        <DatePicker fx:id="returnDate" layoutX="321.0" layoutY="535.0" prefHeight="29.0" prefWidth="198.0" promptText="Choice return date you want" />
                     </children>
                     <BorderPane.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

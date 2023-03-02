@@ -1,9 +1,11 @@
 package io.aptech.Controller;
 
-import io.aptech.Entity.Author;
+
 import io.aptech.Entity.Publisher;
-import io.aptech.Model.AuthorStatement;
+
 import io.aptech.Model.PublisherStatement;
+
+import io.aptech.Validation.PublisherValidation;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -52,6 +54,14 @@ public class PublisherController implements Initializable {
     private TextField txtSearch;
     @FXML
     private Button btnRefresh;
+    @FXML
+    private Label NameLabel;
+    @FXML
+    private Label EmailLabel;
+    @FXML
+    private Label WebLabel;
+    @FXML
+    private Label AddressLabel;
     private static PublisherStatement publisherStatement =new PublisherStatement();
     ObservableList<Publisher> publishers = publisherStatement.getAll();
     public void setValueCategoryForm(Publisher publisher){
@@ -63,6 +73,7 @@ public class PublisherController implements Initializable {
         txtPublisherWeb.setText(publisher.getPus_web());
 
     }
+    private String flag = "true";
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         publisherTableView.getColumns().get(0).setVisible(false);
@@ -73,6 +84,75 @@ public class PublisherController implements Initializable {
         addressCol.setCellValueFactory(new PropertyValueFactory<Publisher, String>("pus_address"));
         publisherTableView.setItems(publishers);
 
+        txtPublisherName.setOnKeyReleased(e-> {
+
+            if ((!PublisherValidation.isPublisherName(txtPublisherName.getText())) && !txtPublisherName.getText().equals("")) {
+                NameLabel.setText("Name is not valid");
+                txtPublisherName.setStyle("-fx-border-color: red");
+                flag = "false";
+            }else if (txtPublisherName.getText()== "") {
+                txtPublisherName.setStyle("-fx-border-color: White");
+                NameLabel.setText("");
+                flag = "false";
+            }
+            else {
+                txtPublisherName.setStyle("-fx-border-color: green");
+                NameLabel.setText("");
+                flag = "true";
+            }
+        });
+        txtPublisherEmail.setOnKeyReleased(e-> {
+
+            if ((!PublisherValidation.isPublisherEmail(txtPublisherEmail.getText()))&& !txtPublisherEmail.getText().equals("")) {
+                EmailLabel.setText("Email is not valid");
+                txtPublisherEmail.setStyle("-fx-border-color: red");
+                flag = "false";
+            }else if (txtPublisherEmail.getText()== "") {
+                txtPublisherEmail.setStyle("-fx-border-color: White");
+                EmailLabel.setText("");
+                flag = "false";
+            }
+            else {
+                txtPublisherEmail.setStyle("-fx-border-color: green");
+                EmailLabel.setText("");
+                flag = "true";
+            }
+        });
+        txtPublisherWeb.setOnKeyReleased(e-> {
+
+            if ((!PublisherValidation.isPublisherWeb(txtPublisherWeb.getText()))&& !txtPublisherWeb.getText().equals("")) {
+                WebLabel.setText("This web is not valid");
+                txtPublisherWeb.setStyle("-fx-border-color: red");
+                flag = "false";
+            }else if (txtPublisherWeb.getText()== "") {
+                txtPublisherWeb.setStyle("-fx-border-color: White");
+                WebLabel.setText("");
+                flag = "false";
+            }
+            else {
+                txtPublisherWeb.setStyle("-fx-border-color: green");
+                WebLabel.setText("");
+                flag = "true";
+            }
+        });
+//        txtAddress.setOnKeyReleased(e-> {
+//
+//            if ((!PublisherValidation.isPublisherAddress(txtAddress.getText()))&& !txtAddress.getText().equals("")) {
+//                AddressLabel.setText("Address is not valid");
+//                txtAddress.setStyle("-fx-border-color: red");
+//                flag = "false";
+//            }else if (txtAddress.getText()== "") {
+//                txtAddress.setStyle("-fx-border-color: White");
+//                AddressLabel.setText("");
+//                flag = "false";
+//            }
+//            else {
+//                txtAddress.setStyle("-fx-border-color: green");
+//                WebLabel.setText("");
+//                flag = "true";
+//            }
+//        });
+
 
         btnAdd.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -80,17 +160,46 @@ public class PublisherController implements Initializable {
 
 //                String newCategoryCode = txtAuthorID.getText();
                 Publisher publisher = new Publisher();
-                publisher.setPus_name(txtPublisherName.getText());
-                publisher.setPus_email(txtPublisherEmail.getText());
-                publisher.setPus_web(txtPublisherWeb.getText());
-                publisher.setPus_address(txtAddress.getText());
+                if (txtPublisherName.getText().isEmpty()){
+                    NameLabel.setText("you must enter this field");
+                    txtPublisherName.setStyle("-fx-border-color: red");
+                }
+                else if (txtPublisherEmail.getText().isEmpty()) {
+                    EmailLabel.setText("you must enter this field");
+                    txtPublisherEmail.setStyle("-fx-border-color: red");
+                }else if (txtPublisherWeb.getText().isEmpty()) {
+                    WebLabel.setText("you must enter this field");
+                    txtPublisherWeb.setStyle("-fx-border-color: red");
+                }
+                else if (txtAddress.getText().isEmpty()) {
+                    AddressLabel.setText("you must enter this field");
+                    txtAddress.setStyle("-fx-border-color: red");
+                }
+                else if (!flag.equals("true")) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION, "Please check your form again!!!!", ButtonType.OK);
+                    alert.setTitle("Check your information");
+                    alert.showAndWait();
+                }
+                else {
+                    txtPublisherName.setStyle("-fx-border-color: green");
+                    NameLabel.setText("");
+                    txtPublisherEmail.setStyle("-fx-border-color: green");
+                    EmailLabel.setText("");
+                    txtPublisherWeb.setStyle("-fx-border-color: green");
+                    WebLabel.setText("");
+                    txtAddress.setStyle("-fx-border-color: green");
+                    AddressLabel.setText("");
+                    publisher.setPus_name(txtPublisherName.getText());
+                    publisher.setPus_email(txtPublisherEmail.getText());
+                    publisher.setPus_web(txtPublisherWeb.getText());
+                    publisher.setPus_address(txtAddress.getText());
 //                newAuthor.setAu_id(Integer.parseInt(txtAuthorID.getText()));
-                publisherStatement.insert(publisher);
-                publishers = publisherStatement.getAll();
-                publisherTableView.setItems(publishers);
-                publisherTableView.refresh();
-                setValueCategoryForm(new Publisher());
-
+                    publisherStatement.insert(publisher);
+                    publishers = publisherStatement.getAll();
+                    publisherTableView.setItems(publishers);
+                    publisherTableView.refresh();
+                    setValueCategoryForm(new Publisher());
+                }
             }
         });
         btnDelete.setOnAction(new EventHandler<ActionEvent>() {
@@ -130,12 +239,42 @@ public class PublisherController implements Initializable {
                 publisher.setPus_email(txtPublisherEmail.getText());
                 publisher.setPus_web(txtPublisherWeb.getText());
                 publisher.setPus_address(txtAddress.getText());
-                publisherStatement.update(publisher);
+                if (txtPublisherName.getText().isEmpty()){
+                    NameLabel.setText("you must enter this field");
+                    txtPublisherName.setStyle("-fx-border-color: red");
+                }
+                else if (txtPublisherEmail.getText().isEmpty()) {
+                    EmailLabel.setText("you must enter this field");
+                    txtPublisherEmail.setStyle("-fx-border-color: red");
+                }else if (txtPublisherWeb.getText().isEmpty()) {
+                    WebLabel.setText("you must enter this field");
+                    txtPublisherWeb.setStyle("-fx-border-color: red");
+                }
+                else if (txtAddress.getText().isEmpty()) {
+                    AddressLabel.setText("you must enter this field");
+                    txtAddress.setStyle("-fx-border-color: red");
+                }
+                else if (!flag.equals("true")) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION, "Please check your form again!!!!", ButtonType.OK);
+                    alert.setTitle("Check your information");
+                    alert.showAndWait();
+                }
+                else {
+                    txtPublisherName.setStyle("-fx-border-color: green");
+                    NameLabel.setText("");
+                    txtPublisherEmail.setStyle("-fx-border-color: green");
+                    EmailLabel.setText("");
+                    txtPublisherWeb.setStyle("-fx-border-color: green");
+                    WebLabel.setText("");
+                    txtAddress.setStyle("-fx-border-color: green");
+                    AddressLabel.setText("");
+                    publisherStatement.update(publisher);
 //                publishers = publisherStatement.getAll();
-                publisherTableView.setItems(publishers);
-                publisherTableView.refresh();
-                setValueCategoryForm(new Publisher());
-                btnAdd.setDisable(false);
+                    publisherTableView.setItems(publishers);
+                    publisherTableView.refresh();
+                    setValueCategoryForm(new Publisher());
+                    btnAdd.setDisable(false);
+                }
             }
         });
         txtSearch.setOnKeyReleased(new EventHandler<KeyEvent>() {

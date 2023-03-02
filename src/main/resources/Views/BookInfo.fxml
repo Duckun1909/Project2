@@ -61,14 +61,14 @@
                                         <Insets left="6.0" right="6.0" top="26.0" />
                                     </VBox.margin>
                                 </TextField>
-                                <Label fx:id="CodeLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="285.0" textFill="#e81818">
-                                    <VBox.margin>
-                                        <Insets left="6.0" right="6.0" />
-                                    </VBox.margin>
-                                    <font>
-                                        <Font size="14.0" />
-                                    </font>
-                                </Label>
+                        <Label fx:id="CodeLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="285.0" textFill="#e81818">
+                           <VBox.margin>
+                              <Insets left="6.0" right="6.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
                                 <TextField fx:id="txtBookName" layoutX="16.0" layoutY="16.0" prefHeight="26.0" prefWidth="244.0" promptText="Name of Book">
                                     <font>
                                         <Font size="15.0" />

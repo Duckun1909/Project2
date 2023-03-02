@@ -10,11 +10,11 @@ public class PublisherValidation {
         return code.matches(regex);
     }
     public static boolean isPublisherWeb(String code) {
-        String regex = "\\b(https?|ftp|file)://[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|]";
+        String regex = "^(?:(?:https?):\\/\\/)?(?:www\\.)?([a-zA-Z0-9_-]+)\\.([a-zA-Z0-9]{2,})(?:\\.([a-zA-Z0-9]{2,}))?([a-zA-Z0-9-._~:\\/?#\\@!$&'()*+,;=%]*)$";
         return code.matches(regex);
     }
     public static boolean isPublisherAddress(String code) {
-        String regex = "^[a-zA-Z0-9 ]+$";
+        String regex = "^\\d+\\s+([a-zA-Z]+|[a-zA-Z]+\\s[a-zA-Z]+)\\s+[a-zA-Z]+(\\.?\\s+[a-zA-Z]+)?$";
         return code.matches(regex);
     }
 }

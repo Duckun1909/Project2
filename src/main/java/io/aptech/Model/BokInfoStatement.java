@@ -129,10 +129,9 @@ public class BokInfoStatement implements DAORepository<Book> {
         ObservableList<Book> books = FXCollections.observableArrayList();
         try {
             String keyword = key.replace(" ","%");
-            String sql = "SELECT id,au_name"+
-                    ",au_description"+
-                    " FROM author"+
-                    " WHERE au_name LIKE '%" + keyword + "%' ";
+            String sql = "SELECT *"+
+                    " FROM book"+
+                    " WHERE book_name LIKE '%" + keyword + "%' OR book_code LIKE '%" + keyword + "%'";
             System.out.println(sql);
             PreparedStatement pts = connection.prepareStatement(sql);
             ResultSet rs = pts.executeQuery();
