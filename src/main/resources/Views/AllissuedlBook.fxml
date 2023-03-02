@@ -8,9 +8,11 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -50,16 +52,18 @@
                     <children>
                         <VBox alignment="TOP_CENTER" layoutX="11.0" layoutY="23.0" prefHeight="438.0" prefWidth="725.0" AnchorPane.bottomAnchor="58.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="16.0">
                             <children>
-                                <TableView fx:id="c_LF" prefHeight="442.0" prefWidth="719.0" VBox.vgrow="ALWAYS">
+                                <TableView fx:id="issuedBookTable" prefHeight="442.0" prefWidth="719.0" VBox.vgrow="ALWAYS">
                                     <columns>
-                                        <TableColumn fx:id="c_isId" prefWidth="75.0" text="IsId" />
-                                        <TableColumn fx:id="c_bookName" prefWidth="75.0" text="Title  of Book" />
-                                        <TableColumn fx:id="c_readerId" prefWidth="75.0" text="ReaderID" />
-                                        <TableColumn fx:id="descriptionCol" prefWidth="75.0" text="ReaderName" />
-                                        <TableColumn fx:id="c_isT" prefWidth="75.0" text="Issued Time" />
-                              <TableColumn fx:id="c_rT" prefWidth="75.0" text="Return Time" />
-                              <TableColumn fx:id="c_status" prefWidth="75.0" text="Status" />
-                              <TableColumn fx:id="stockCol111" prefWidth="75.0" text="Late Fee" />
+                                        <TableColumn fx:id="readerCode" prefWidth="75.0" text="Reader's Code" />
+                                        <TableColumn fx:id="readerName" prefWidth="75.0" text="Reader's Name" />
+                                        <TableColumn fx:id="bookCode" prefWidth="75.0" text="Book's Code" />
+                                        <TableColumn fx:id="bookName" prefWidth="75.0" text="Book's Name" />
+                                        <TableColumn fx:id="borrowDate" prefWidth="75.0" text="Borrow Date" />
+                                        <TableColumn fx:id="returnDate" prefWidth="75.0" text="Return Date" />
+                                        <TableColumn fx:id="borrowStatus" prefWidth="75.0" text="Status" />
+                                        <TableColumn fx:id="fee" prefWidth="75.0" text="Fee" />
+                                        <TableColumn fx:id="note" prefWidth="75.0" text="Note" />
+                                        <TableColumn fx:id="borrowDetailID" prefWidth="75.0" visible="false" />
                                     </columns>
                                     <columnResizePolicy>
                                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -72,14 +76,16 @@
                                         </ContextMenu>
                                     </contextMenu>
                                 </TableView>
-                        <Button defaultButton="true" mnemonicParsing="false" prefHeight="30.0" prefWidth="126.0" text="Return" textFill="#d75b5b">
-                           <VBox.margin>
-                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font name="Arial" size="12.0" />
-                           </font>
-                        </Button>
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="btnReturn" defaultButton="true" layoutX="454.0" layoutY="34.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="126.0" text="Return" textFill="#d75b5b">
+                                 <font>
+                                    <Font name="Arial" size="12.0" />
+                                 </font>
+                              </Button>
+                              <TextArea fx:id="txtReturnStatus" layoutX="171.0" layoutY="3.0" prefHeight="92.0" prefWidth="234.0" promptText="The status of book when returned" />
+                           </children>
+                        </Pane>
                             </children>
                         </VBox>
                     </children>

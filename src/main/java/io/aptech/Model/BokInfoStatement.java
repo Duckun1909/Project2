@@ -26,7 +26,7 @@ public class BokInfoStatement implements DAORepository<Book> {
             pst.setString(1, book.getBook_name());
             pst.setFloat(2, book.getBook_price());
             pst.setString(3, book.getBook_description());
-            pst.setString(4, book.getBook_status());
+            pst.setString(4, String.valueOf(book.getBook_status()));
             pst.setInt(5, book.getCategory().getCat_id());
             pst.setInt(6, book.getAuthor().getAu_id());
             System.out.println();
@@ -43,23 +43,19 @@ public class BokInfoStatement implements DAORepository<Book> {
 
     @Override
     public void update(Book book) {
-
         System.out.println(book.getAuthor().getAu_id());
         try {
             String sql = "UPDATE book SET book_name =?,book_price =?,book_description=?,book_status=?,book_code=?,cat_id=?,pushlisher_id=?,author_id=? WHERE id =?";
-
             PreparedStatement pst = connection.prepareStatement(sql);
             pst.setString(1, book.getBook_name());
             pst.setFloat(2, book.getBook_price());
             pst.setString(3, book.getBook_description());
-            pst.setString(4, book.getBook_status());
+            pst.setString(4, String.valueOf(book.getBook_status()));
             pst.setString(5, book.getBook_code());
-
             pst.setInt(6, book.getCategory().getCat_id());
             pst.setInt(7, book.getPublisher().getPus_id());
             pst.setInt(8, book.getAuthor().getAu_id());
             pst.setInt(9, book.getBook_id());
-
 
             pst.executeUpdate();
         }catch (SQLException e){
@@ -94,17 +90,13 @@ public class BokInfoStatement implements DAORepository<Book> {
 
             while(rs.next()){
                 Category category = new Category();
-
                 category.setCat_id(rs.getInt( "cat_id"));
-
                 category.setCat_name(rs.getString( "cat_name"));
                 category.setCat_description(rs.getString( "cat_description"));
                 category.setCat_code(rs.getString( "cat_code"));
 
                 Publisher publisher = new Publisher();
-
                 publisher.setPus_id(rs.getInt( "pushlisher_id"));
-
                 publisher.setPus_name(rs.getString( "pus_name"));
                 publisher.setPus_email(rs.getString( "pus_email"));
                 publisher.setPus_web(rs.getString( "pus_web"));
@@ -112,7 +104,6 @@ public class BokInfoStatement implements DAORepository<Book> {
 
                 Author author = new Author();
                 author.setAu_id(rs.getInt( "author_id" ));
-
                 author.setAu_name(rs.getString( "au_name"));
                 author.setAu_description(rs.getString( "au_description"));
 

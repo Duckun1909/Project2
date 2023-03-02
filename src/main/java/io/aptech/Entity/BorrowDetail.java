@@ -1,26 +1,35 @@
 package io.aptech.Entity;
 
+import java.sql.Date;
+
 public class BorrowDetail {
-    private int borrowDetail_id;
+    private int id;
     private Borrow borrow;
     private Book book;
-    private float payment;
+    private Date borrowDate;
+    private Date returnDate;
+    private String note;
+    private String status;
 
     public BorrowDetail() {
     }
 
-    public BorrowDetail(Borrow borrow, Book book, float payment) {
+    public BorrowDetail(int id, Borrow borrow, Book book, Date borrowDate, Date returnDate, String note, String status) {
+        this.id = id;
         this.borrow = borrow;
         this.book = book;
-        this.payment = payment;
+        this.borrowDate = borrowDate;
+        this.returnDate = returnDate;
+        this.note = note;
+        this.status = status;
     }
 
-    public int getBorrowDetail_id() {
-        return borrowDetail_id;
+    public int getId() {
+        return id;
     }
 
-    public void setBorrowDetail_id(int borrowDetail_id) {
-        this.borrowDetail_id = borrowDetail_id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Borrow getBorrow() {
@@ -39,21 +48,48 @@ public class BorrowDetail {
         this.book = book;
     }
 
-    public float getPayment() {
-        return payment;
+    public Date getBorowDate() {
+        return borrowDate;
     }
 
-    public void setPayment(float payment) {
-        this.payment = payment;
+    public void setBorowDate(Date borowDate) {
+        this.borrowDate = borowDate;
+    }
+
+    public Date getReturnDate() {
+        return returnDate;
+    }
+
+    public void setReturnDate(Date returnDate) {
+        this.returnDate = returnDate;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
     public String toString() {
         return "BorrowDetail{" +
-                "borrowDetail_id=" + borrowDetail_id +
+                "id=" + id +
                 ", borrow=" + borrow +
                 ", book=" + book +
-                ", payment=" + payment +
+                ", borowDate=" + borrowDate +
+                ", returnDate=" + returnDate +
+                ", returnStatus='" + note + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }
